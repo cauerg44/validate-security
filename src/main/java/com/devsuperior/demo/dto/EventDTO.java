@@ -4,12 +4,23 @@ import java.time.LocalDate;
 
 import com.devsuperior.demo.entities.Event;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+
 public class EventDTO {
 	
 	private Long id;
+	
+	@NotBlank(message = "Event name cannot be empty")
 	private String name;
+	
+	@Past(message = "Date must be in the past")
+    @NotNull(message = "Date must not be null")
 	private LocalDate date;
 	private String url;
+	
+	@NotNull(message = "City must not null.")
 	private Long cityId;
 	
 	public EventDTO() {
