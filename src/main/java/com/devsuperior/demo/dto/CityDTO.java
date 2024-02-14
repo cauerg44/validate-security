@@ -8,7 +8,7 @@ public class CityDTO {
 	
 	private Long id;
 	
-	@NotBlank(message = "City name can not be empty.")
+	@NotBlank(message = "Campo requerido")
 	private String name;
 	
 	public CityDTO() {

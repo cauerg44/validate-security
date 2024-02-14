@@ -4,9 +4,9 @@ import java.time.LocalDate;
 
 import com.devsuperior.demo.entities.Event;
 
+import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Past;
 
 public class EventDTO {
 	
@@ -15,8 +15,8 @@ public class EventDTO {
 	@NotBlank(message = "Event name cannot be empty")
 	private String name;
 	
-	@Past(message = "Date must be in the past")
-    @NotNull(message = "Date must not be null")
+	@NotNull(message = "Date must not be null.")
+	@FutureOrPresent(message = "Date cannot be in the past.")
 	private LocalDate date;
 	private String url;
 	
@@ -46,39 +46,19 @@ public class EventDTO {
 		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
 	public String getName() {
 		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public LocalDate getDate() {
 		return date;
 	}
 
-	public void setDate(LocalDate date) {
-		this.date = date;
-	}
-
 	public String getUrl() {
 		return url;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
 	public Long getCityId() {
 		return cityId;
-	}
-
-	public void setCityId(Long cityId) {
-		this.cityId = cityId;
 	}
 }
