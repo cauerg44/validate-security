@@ -12,15 +12,15 @@ public class EventDTO {
 	
 	private Long id;
 	
-	@NotBlank(message = "Event name cannot be empty")
+	@NotBlank(message = "Campo requerido")
 	private String name;
 	
 	@NotNull(message = "Date must not be null.")
-	@FutureOrPresent(message = "Date cannot be in the past.")
+	@FutureOrPresent(message = "A data do evento não pode ser passada")
 	private LocalDate date;
 	private String url;
 	
-	@NotNull(message = "City must not null.")
+	@NotNull(message = "Campo requerido")
 	private Long cityId;
 	
 	public EventDTO() {
